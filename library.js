@@ -15,12 +15,12 @@ function getHammingDistance(str1, str2){
 function countSubstrPattern(strOriginal, strPattern){
 	var total = 0;
 	var count=0;
-	for (var i=0; i<strOriginal.length; i++){
-		for (var j=0; j<strPattern.length && i<=strOriginal.length - strPattern.length; j++){
-			if (strPattern.charAt(j) == strOriginal.charAt(i+j)) count++;
+	for (var i=0; i<strOriginal.length; i++){ //Loop traversng each possible starting point of comparison on the original string.
+		for (var j=0; j<strPattern.length && i<=strOriginal.length - strPattern.length; j++){ //Loop just cycling on the pattern for comparison.
+			if (strPattern.charAt(j) == strOriginal.charAt(i+j)) count++; //If the a right letter on the pattern can be seen on the original on the right order, increment count.
 		}
-		if (count == strPattern.length) total++;
-		count=0;
+		if (count == strPattern.length) total++; //If count matches the length of the pattern, it means that the whole pattern matched; increases the total var.
+		count=0; //Resets the count to 0 for a comparison on a different starting point on the original string.
 	}
 	return total;
 }
