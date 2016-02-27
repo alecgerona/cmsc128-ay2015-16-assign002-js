@@ -34,6 +34,19 @@ function isValidString(str, alphabet){
 	return true;
 }
 
+function getSkew(str, n){
+	var g=0;
+	var c=0;
+
+	for (var i=0; i<n; i++){
+		if(str.charAt(i) == "G") g++;
+		else if (str.charAt(i) == "C") c++;
+	}
+	return g-c;
+
+
+}
+
 
 
 
