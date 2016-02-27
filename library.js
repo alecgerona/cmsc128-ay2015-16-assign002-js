@@ -29,7 +29,7 @@ function countSubstrPattern(strOriginal, strPattern){
 function isValidString(str, alphabet){
 	var test=0;
 	for (var i=0; i<str.length; i++){
-		if(alphabet.indexOf(str.charAt(i)) < 0) return false;
+		if(alphabet.indexOf(str.charAt(i)) < 0) return false; //indexOf() returns -1 if its argument isn't found in the target array. 
 	}
 	return true;
 }
