@@ -13,7 +13,7 @@ function getHammingDistance(str1, str2){
 }
 
 function countSubstrPattern(strOriginal, strPattern){
-	var total = 0;
+	var total=0;
 	var count=0;
 	for (var i=0; i<strOriginal.length; i++){ //Loop traversng each possible starting point of comparison on the original string.
 		for (var j=0; j<strPattern.length && i<=strOriginal.length - strPattern.length; j++){ //Loop just cycling on the pattern for comparison.
@@ -24,6 +24,20 @@ function countSubstrPattern(strOriginal, strPattern){
 	}
 	return total;
 }
+
+
+function isValidString(str, alphabet){
+	var test=0;
+	for (var i=0; i<alphabet.length; i++){
+		for(var j=0; j<str.length; j++){
+			if (str.charAt(j) != alphabet.charAt(i)) test++;
+		}
+		if (test == alphabet.length) return false;
+		test = 0;
+	}
+	return true;
+}
+
 
 
 
