@@ -48,10 +48,10 @@ function getSkew(str, n){
 function getMaxSkewN(str, n){
 	var skew = [];
 	for (var i=0; i<n; i++){
-		skew.push(getSkew(str,i+1));
+		skew.push(getSkew(str,i+1)); //Push into the array all of the Skews of the given string until position n.
 	}
-	skew.sort(function(a, b){return b-a});
-	return skew[0];
+	skew.sort(function(a, b){return b-a}); //Sort the array descendingly
+	return skew[0]; //Return the max value
 }
 
 
