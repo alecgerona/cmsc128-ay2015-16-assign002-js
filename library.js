@@ -43,10 +43,16 @@ function getSkew(str, n){
 		else if (str.charAt(i) == "C") c++;
 	}
 	return g-c;
-
-
 }
 
+function getMaxSkewN(str, n){
+	var skew = [];
+	for (var i=0; i<n; i++){
+		skew.push(getSkew(str,i+1));
+	}
+	skew.sort(function(a, b){return b-a});
+	return skew[0];
+}
 
 
 
